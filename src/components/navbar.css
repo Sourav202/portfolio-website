@@ -1,0 +1,185 @@
+@media screen and (min-width: 1024px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+  /* Define color variables */
+  :root {
+    --clr-dark: #070a12;
+    --clr-light: #f9f9fb;
+    --clr-accent: #f43f70;
+    --clr-rgba: rgba(244, 63, 112, 0.2);
+  }
+
+  /* General margins and properties */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* Set a base font size that scales based on the viewport */
+  html {
+    font-size: calc(0.5vw + 0.5vh + 10px);
+  }
+
+  /* Body styling */
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    word-spacing: 0.1rem;
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* Navbar styling */
+  .navbar {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 4rem; 
+    padding: 0.8rem 4%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--clr-light);
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    transition: background-color 0.6s ease, color 0.6s ease;
+  }
+
+  .navbar span.hop {
+    animation: hop 0.5s ease; 
+  }
+
+  @keyframes hop {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-1rem);}
+    100% {transform: translateY(0);}
+  }
+
+  /* Navbar text styling */
+  #navbar span {
+    font-family: 'Dokyo', sans-serif; 
+    font-size: 1.5rem; /* Adaptive font size */
+    font-weight: 700;
+    color: var(--clr-accent); 
+  }
+
+  /* Icon for theme */
+  .toggle-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem; /* Use rem for adaptive size */
+    height: 3rem; /* Use rem for adaptive size */
+  }
+
+  /* Button styling */
+  ul {
+    flex: 1;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  ul li {
+    display: inline-block;
+    margin: 0 1rem; 
+    font-size: 1rem; /* Adaptive font size */
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0.8vh 1.0vw; /* Use vh and vw for adaptive spacing */
+    border: 0.1rem solid;
+    border-radius: 0.5rem;
+    line-height: 1.2; 
+    text-align: center; 
+  }
+
+  /* Light mode button styles */
+  .container-light ul li {
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
+    border-color: var(--clr-dark);
+    transition: background-color 0.6s ease, color 0.6s ease;
+  }
+
+  .container-light ul li:hover {
+    transition: 0.2s;
+    transform: translateY(-0.2vh); 
+    animation: invertColorsLight 0.3s forwards;
+  }
+
+  /* Dark mode button styles */
+  .container-dark ul li {
+    color: var(--clr-light);
+    background-color: var(--clr-dark);
+    border-color: var(--clr-light);
+    transition: background-color 0.6s ease, color 0.6s ease;
+  }
+
+  .container-dark ul li:hover {
+    transition: 0.2s;
+    transform: translateY(-0.2vh);
+    animation: invertColorsDark 0.3s forwards;
+  }
+
+  /* Keyframe animations */
+  @keyframes invertColorsLight {
+    from {
+      background-color: var(--clr-rgba);
+      color: var(--clr-accent);
+    }
+    to {
+      background-color: var(--clr-accent);
+      color: var(--clr-light);
+    }
+  }
+
+  @keyframes invertColorsDark {
+    from {
+      background-color: var(--clr-dark);
+      color: var(--clr-light);
+    }
+    to {
+      background-color: var(--clr-light);
+      color: var(--clr-dark);
+    }
+  }
+
+  /* Additional styles for themes */
+  .container-dark .navbar {
+    background: var(--clr-dark);
+    color: var(--clr-light);
+  }
+
+  .container-light .navbar {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+  }
+
+  .container-light ul li.active {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    border-color: var(--clr-accent);
+    border-width: 0.3rem;
+  }
+
+  .container-dark ul li.active {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    border-color: var(--clr-accent);
+    border-width: 0.3rem;
+  }
+}

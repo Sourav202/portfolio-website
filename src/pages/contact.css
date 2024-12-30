@@ -1,0 +1,79 @@
+.contact-header {
+  margin-top: -4rem;
+  padding-top: var(--navbar-height); /* Consistent with other pages */
+}
+/* Contact Page Styles */
+.contact-container {
+  display: flex;
+  flex-direction: row; /* Align animation and text side-by-side */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows stacking when content overflows */
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: -3rem;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  width: 100%; /* Ensures the title spans full width */
+}
+
+/* Contact Information Styling */
+.contact-info {
+  text-align: left; /* Align text to the left */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Animation Styling */
+.contact-animation {
+  flex: 1; /* Allow animation to take up available space */
+  max-width: 800px; /* Constrain the animation size */
+  width: 100%;
+  height: auto;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center; /* Align icons horizontally */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links img {
+  width: 6rem; /* Set same width for both icons */
+  height: 6rem; /* Set same height for both icons */
+  border-radius: 48%; /* Make them circular */
+  object-fit: contain; /* Ensure the image fits within the circle */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for consistency */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px; /* Constrain the animation size */
+}
+
+.social-links img:hover {
+  border: 0.1rem solid #f5427d; /* Add animated border on hover */
+  transform: scale(1.05); /* Slightly enlarge the image */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth animation for scaling */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    margin-top: 0rem;
+  }
+  .contact-container {
+    flex-direction: column; /* Stack animation and text vertically */
+    text-align: center;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
