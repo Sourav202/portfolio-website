@@ -1,19 +1,15 @@
 import gsap from "gsap";
 
-// Declare a general timeline to use in all the animation functions.
 
 const tl = gsap.timeline();
 
-// Preloader Animation
 export const preLoaderAnim = () => {
   tl.to("body", {
     duration: 0.1,
-    //css: { overflowY: "hidden" },
     ease: "power3.inOut",
   })
     .to(".landing", {
       duration: 0.05,
-      //css: { overflowY: "hidden", height: "90vh" },
     })
     .to(".texts-container", {
       duration: 0,
@@ -38,11 +34,9 @@ export const preLoaderAnim = () => {
 
     .to(".landing", {
       duration: 0.05,
-      //css: { overflowY: "hidden", height: "unset" },
     })
     .to("body", {
       duration: 0.1,
-      //css: { overflowY: "scroll" },
       ease: "power3.inOut",
     })
     .from(".landing__top .sub", {
@@ -63,7 +57,6 @@ export const preLoaderAnim = () => {
     )
     .from(".landing__main .text", {
       duration: 2,
-      // scale: 0,
       y: 10,
       opacity: 0,
       stagger: {
@@ -75,7 +68,6 @@ export const preLoaderAnim = () => {
       duration: 0.5,
       opacity: 0,
       delay: window.innerWidth < 763 ? -3 : -0.6,
-      // y: 80,
       stagger: {
         amount: 0.5,
       },
@@ -105,7 +97,6 @@ export const openMenu = () => {
   const tl = gsap.timeline();
   tl.to("body", {
     duration: 0.1,
-    //css: { overflowY: "hidden" },
     ease: "power3.out",
   })
     .to(".hamburger-menu", {
@@ -147,19 +138,12 @@ export const openMenu = () => {
       },
       "-=.3"
     );
-
-  // change cursor color when nav is open
-  // tl.to(".cursor", {
-  //   delay: -1,
-  //   css: { className: "+=cursor-active" },
-  // }).to(".cursor2", { delay: -1, css: { className: "+=cursor2-active" } });
 };
 
 export const closeMenu = () => {
   const tl = gsap.timeline();
   tl.to("body", {
     duration: 0.05,
-    //css: { overflowY: "scroll" },
     ease: "power3.inOut",
   })
     .to([".nav-primary", ".nav-secondary"], {
@@ -184,13 +168,8 @@ export const closeMenu = () => {
       duration: 0.05,
       css: { display: "none" },
     });
-
-  // tl.to(".cursor-active", {
-  //   css: { className: "+=cursor" },
-  // }).to(".cursor2-active", { css: { className: "+=cursor2" } });
 };
 
-// recurrent animations
 export const fadeUp = (el, delay = 0) => {
   tl.from(el, {
     y: 150,

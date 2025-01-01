@@ -1,64 +1,54 @@
-/* Root Variables */
 :root {
   --navbar-height: 4rem;
 }
-
-/* Global Reset */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  font-weight: bold; /* Make all text bold */
+  overflow-x: hidden; 
+  font-weight: bold; 
   z-index: 1;
 }
 
-/* Home Page Container */
 .home-container {
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between; /* Utilize full space */
+  justify-content: space-between;
   width: 100%;
   min-height: calc(100vh - var(--navbar-height));
   padding: 2rem;
   gap: 2rem;
   flex-wrap: nowrap;
-  overflow-x: hidden; /* Prevent overflow */
+  overflow-x: hidden; 
   z-index: 1;
 }
-
-/* Profile Image */
 .home-image {
-  width: clamp(200px, 60%, 500px); /* Adjust size for smaller screens */
-  height: clamp(200px, 60%, 500px); /* Ensure image remains proportional */
-  border-radius: 50%; /* Keep it circular */
-  object-fit: cover; /* Prevent distortion */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Add a shadow */
-  box-sizing: border-box; /* Include padding and borders in dimensions */
+  width: clamp(200px, 60%, 500px); 
+  height: clamp(200px, 60%, 500px); 
+  border-radius: 50%; 
+  object-fit: cover; 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+  box-sizing: border-box; 
   z-index: 1;
 }
 .home-image:hover {
-  border: 0.1rem solid #f5427d; /* Add animated border on hover */
-  transform: scale(1.05); /* Slightly enlarge the image */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth animation for scaling */
+  border: 0.2rem solid #f5427d; 
+  transform: scale(1.05); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
-
-/* Text Section */
 .home-text {
   flex: 1;
   min-width: 0;
   max-width: 100%;
   text-align: left;
   font-size: clamp(0.8rem, 2.5vw, 1rem);
-  overflow-wrap: break-word; /* Prevent text overflow */
+  overflow-wrap: break-word; 
   z-index: 1;
 }
-
-/* Heading Styles */
 .home-heading {
   font-size: clamp(2rem, 6vw, 3rem);
   margin-top: -0.5rem;
@@ -66,26 +56,19 @@ html, body {
   cursor: default;
   font-weight: bold;
   z-index: 1;
-  
 }
-
-/* Hover Effect */
 .home-heading:hover span:nth-child(1) {
   transition: 0.3s;
   margin-right: 0.1rem;
 }
-
 .home-heading:hover span:nth-child(1)::after {
   transition: 0.3s;
   content: "";
 }
-
 .home-heading:hover span:nth-child(2) {
   transition: 0.3s;
   margin-left: 0.1rem;
 }
-
-/* Glow Effect on Hover */
 .home-heading:hover span {
   text-shadow: 
     0 0 10px #f5427d, 
@@ -95,43 +78,32 @@ html, body {
     0 0 80px #f5427d, 
     0 0 160px #f5427d;
 }
-
-/* "Hi, my name is" and other description text */
 .home-description {
   font-size: clamp(0.8rem, 2.5vw, 1rem);
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
-/* Typing Wrapper */
 .typing-wrapper {
   display: inline-flex;
   align-items: center;
   font-size: clamp(1.2rem, 3vw, 2rem);
   overflow-wrap: break-word;
 }
-
-/* Static Text */
 .static-text {
   font-weight: bold;
   margin-right: 0.5rem;
 }
-
-/* Dynamic Text */
 .dynamic-text {
   display: inline-block;
-  white-space: normal; /* Allow the text to wrap */
+  white-space: normal; 
   font-weight: bold;
 }
-
-/* Blinking Cursor */
 .cursor {
   border-left: 4px solid #f5427d;
   animation: blink 0.7s steps(2, start) infinite;
   margin-left: 2px;
 }
-
-/* Cursor Blinking Animation */
 @keyframes blink {
   0%, 100% {
     opacity: 1;
@@ -141,18 +113,15 @@ html, body {
   }
 }
 
-/* Buttons Container */
 .home-buttons {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Flexible layout */
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); 
   gap: 1rem;
-  margin-top: 2rem; /* Add space between content and buttons */
-  width: 100%; /* Span the entire width */
-  justify-items: center; /* Center buttons in their grid cells */
-  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+  margin-top: 2rem; 
+  width: 100%; 
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr); 
 }
-
-/* Button Styles */
 .home-button {
   padding: 1rem 2rem;
   font-size: 1rem;
@@ -163,9 +132,8 @@ html, body {
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out, background-color 0.3s;
-  width: 100%; /* Ensure buttons take full width in their grid cell */
+  width: 100%; 
 }
-
 .home-button:hover {
   transform: scale(1.05);
   background-color: #c43666;
@@ -173,73 +141,62 @@ html, body {
 
 @media (max-width: 1000px) {
   .home-image {
-    width: clamp(200px, 60%, 400px); /* Adjust size for smaller screens */
-    height: clamp(200px, 60%, 400px); /* Ensure image remains proportional */
-    border-radius: 50%; /* Keep it circular */
-    object-fit: cover; /* Prevent distortion */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Add a shadow */
-    box-sizing: border-box; /* Include padding and borders in dimensions */
+    width: clamp(200px, 60%, 400px); 
+    height: clamp(200px, 60%, 400px); 
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+    box-sizing: border-box; 
     z-index: 1;
   }
   .home-buttons {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Flexible layout */
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); 
     gap: 1rem;
-    margin-top: 2rem; /* Add space between content and buttons */
-    width: 100%; /* Span the entire width */
-    justify-items: center; /* Center buttons in their grid cells */
-    grid-template-columns: repeat(1, 1fr); /* 2 columns by default */
+    margin-top: 2rem;
+    width: 100%;
+    justify-items: center; 
+    grid-template-columns: repeat(1, 1fr); 
   }
 }
 
-/* Media Query for Small Screens */
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
-    align-items: center; /* Ensure content centers */
-    padding: 1rem; /* Reduce padding for smaller screens */
-    gap: 1rem; /* Reduce gap to compress content */
-    max-width: 100%; /* Prevent overflow */
-    overflow-x: hidden; /* Ensure no horizontal overflow */
+    align-items: center; 
+    padding: 1rem; 
+    gap: 1rem; 
+    max-width: 100%; 
+    overflow-x: hidden; 
   }
-
-  /* Profile Image Adjustments */
   .home-image {
-    margin-top: 5rem; /* Add spacing if needed to center the image */
-    max-width: 100%; /* Prevent overflow on smaller screens */
-    height: auto; /* Maintain aspect ratio */
-    width: clamp(200px, 60%, 350px); /* Adjust size for smaller screens */
-    height: clamp(200px, 60%, 350px); /* Ensure image remains proportional */
+    margin-top: 5rem; 
+    max-width: 100%;
+    height: auto;
+    width: clamp(200px, 60%, 350px); 
+    height: clamp(200px, 60%, 350px); 
   }
-
-  /* Text Section */
   .home-text {
-    max-width: 100%; /* Compress content within 90% width */
-    text-align: center; /* Center text for mobile view */
+    max-width: 100%; 
+    text-align: center; 
   }
-
-  /* Adjust Typing Wrapper */
   .typing-wrapper {
-    flex-wrap: wrap; /* Allow wrapping to fit on small screens */
+    flex-wrap: wrap; 
     justify-content: center;
   }
-
-  /* Buttons Container */
   .home-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    width: 100%; /* Take full width */
+    flex-direction: column; 
+    width: 100%; 
     gap: 0.5rem;
   }
-
-  /* Button Styles */
   .home-button {
-    padding: 0.8rem 1.5rem; /* Adjust padding for smaller buttons */
-    font-size: 1rem; /* Ensure text is legible */
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
 .blob-home {
-  position: absolute; /* Moves it in relation to the nearest positioned parent */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
@@ -248,7 +205,6 @@ html, body {
   overflow: hidden;
   pointer-events: none;
 }
-
 .blob-home path {
-  transition: fill 1s ease-in-out; /* Smooth transition for the gradient */
+  transition: fill 1s ease-in-out; 
 }

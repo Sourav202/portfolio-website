@@ -2,30 +2,28 @@ import React, { useEffect, useState, useRef } from 'react';
 import './preloader.css';
 
 const Preloader = ({ children }) => {
-  const preloaderRef = useRef(null); // Reference to preloader
-  const [textIndex, setTextIndex] = useState(0); // Track which text to show
-  const [isVisible, setIsVisible] = useState(true); // Control preloader visibility
+  const preloaderRef = useRef(null); 
+  const [textIndex, setTextIndex] = useState(0); 
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const textElements = document.querySelectorAll('.texts-container span');
 
-    // Reveal text elements one-by-one with animation
     if (textElements.length > 0 && textIndex < textElements.length) {
       const interval = setInterval(() => {
         if (textElements[textIndex]) {
-          textElements[textIndex].classList.add('show'); // Add 'show' class
+          textElements[textIndex].classList.add('show'); 
         }
         setTextIndex((prev) => prev + 1);
-      }, 600); // Reveal every 700ms
+      }, 600); 
 
-      return () => clearInterval(interval); // Cleanup interval on unmount
+      return () => clearInterval(interval); 
     } else if (textIndex >= textElements.length) {
-      // Once all text is shown, initiate the wipe-up animation
       setTimeout(() => {
         if (preloaderRef.current) {
-          preloaderRef.current.classList.add('hidden'); // Add hidden class
+          preloaderRef.current.classList.add('hidden'); 
         }
-        setTimeout(() => setIsVisible(false), 1000); // Hide preloader completely
+        setTimeout(() => setIsVisible(false), 1000); 
       }, 1600);
     }
   }, [textIndex]);

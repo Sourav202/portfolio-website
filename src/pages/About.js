@@ -9,7 +9,6 @@ const About = React.forwardRef((props, ref) => {
       <div className="about-header" ref={ref}>
         <div className="about-container">
           <h1 className="about-heading">All About Me</h1>
-          {/* Academic Journey Section */}
           <section className="about-section">
             <div className="section-image">
               <img src={journeyImg} alt="Academic Journey" />
@@ -33,8 +32,8 @@ const About = React.forwardRef((props, ref) => {
               <p>
                 I enjoy engaging in a diverse range of activities that fuel both my creativity and physical well-being. I am involved in the Carleton University Badminton Club and regularly work out at the gym. On the creative side, I am passionate about videography and editing, where I use the Adobe Creative Suite to bring my ideas to life. Beyond these, I have had the honor of competing internationally, earning second place in the&nbsp;
                 <a href="https://www.getmistified.com/" target="_blank" rel="noopener noreferrer">MIST International Film Competition</a> 
-                &nbsp;for my storytelling skills and receiving the Design and Build Awards with my&nbsp;
-                <a href="https://www.vexrobotics.com/" target="_blank" rel="noopener noreferrer">VEX Robotics</a> team, which showcased my ability to innovate and sparked my continuous interest in coding.
+                &nbsp;for my video editing and storytelling skills, and receiving the Design and Build Awards with my&nbsp;
+                <a href="https://www.vexrobotics.com/" target="_blank" rel="noopener noreferrer">VEX Robotics</a> team (99000X ~(˘▾ ˘~)), which showcased my ability to innovate and sparked my continuous interest in coding.
               </p>
             </div>
           </section>

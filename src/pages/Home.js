@@ -1,6 +1,6 @@
 import React, { useEffect, useState, forwardRef } from 'react';
-import './home.css'; // Custom styles for Home page
-import pic from '../assets/profile.jpg'; // Import profile image
+import './home.css'; 
+import pic from '../assets/profile.jpg'; 
 
 const phrases = [
   'AI/ML Engineer.',
@@ -52,7 +52,6 @@ const Home = forwardRef(({ setCurrentSection, theme }, ref) => {
               <stop offset="75%" stopColor="rgb(44, 3, 78)" />
             </linearGradient>
           </defs>
-
           <path
             fill="url(#darkGradient)"
             style={{
@@ -73,7 +72,6 @@ const Home = forwardRef(({ setCurrentSection, theme }, ref) => {
                 M451.5,299Q420,348,383.5,383Q347,418,298.5,441.5Q250,465,198,447.5Q146,430,111,390Q76,350,44.5,300Q13,250,47.5,201.5Q82,153,111.5,107.5Q141,62,195.5,57Q250,52,297,69.5Q344,87,392.5,113.5Q441,140,462,195Q483,250,451.5,299Z`}
             />
           </path>
-
           <path
             fill="url(#lightGradient)"
             style={{
@@ -96,7 +94,6 @@ const Home = forwardRef(({ setCurrentSection, theme }, ref) => {
           </path>
         </svg>
       </div>
-
       <img src={pic} alt="Sourav Minhas" className="home-image" />
       <div className="home-text">
       <p className="home-description" style={{ paddingTop: '1rem' }}>

@@ -1,30 +1,24 @@
-/* General Container Styles */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  overflow: visible; /* Ensure tooltips aren't cut off */
+  overflow: visible; 
 }
-
 .projects-header {
   margin-top: -6rem;
 }
-
 .projects-heading {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* Light Theme Styles */
 .light-theme .project-card {
   background-color: #ffffff;
   color: #1c1c1c;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.5s ease;}
-
-/* Dark Theme Styles */
 .dark-theme .project-card {
   background-color: #2a2a2a;
   color: white;
@@ -32,34 +26,29 @@
   transition: background-color 0.6s ease;
 }
 
-/* Project Card */
 .project-card {
-  position: relative; /* Make it a positioning reference */
-  overflow: visible; /* Ensure the tooltip isn't cut off */
+  position: relative; 
+  overflow: visible; 
   border-radius: 0.5rem;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; /* Ensure all cards are equal height */
+  height: 100%; 
 }
-
 .project-card:hover {
-  transform: scale(1.05); /* Slightly increase the size */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth animation for scaling */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add a deeper shadow for emphasis */
-  border: 0.1rem solid #f5427d; /* Add animated border on hover */
+  transform: scale(1.05); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+  border: 0.2rem solid #f5427d; 
 }
-
-/* Project Image */
 .project-image {
-  border-radius: 0.5rem;
+  border-radius: 0.33rem;
   width: 100%;
   height: 250px;
   object-fit: cover;
 }
 
-/* OS Icon on Image */
 .os-icon {
   position: absolute;
   top: 10px;
@@ -75,18 +64,15 @@
   transition: transform 0.3s ease;
   z-index: 1;
 }
-
 .os-icon img {
   width: 100%;
   height: 100%;
 }
-
-/* Tooltip */
 .os-icon-tooltip {
   display: none;
   position: absolute;
-  top: 0px; /* Position tooltip above the icon */
-  right: 50%; /* Center it horizontally over the icon */
+  top: 0px; 
+  right: 50%; 
   transform: translateX(50%);
   background-color: black;
   color: white;
@@ -98,8 +84,6 @@
   opacity: 0;
   transition: opacity 0.2s, transform 0.2s ease-in-out;
 }
-
-/* Tooltip Arrow */
 .os-icon-tooltip::after {
   content: '';
   position: absolute;
@@ -110,53 +94,41 @@
   border-style: solid;
   border-color: black transparent transparent transparent;
 }
-
-/* Show Tooltip on Hover */
 .os-icon:hover + .os-icon-tooltip {
   display: block;
   opacity: 1;
 }
 
-/* Project Content */
 .project-content {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Ensure content fills space */
+  flex-grow: 1; 
   justify-content: space-between;
   padding: 0.8rem;
 }
-
-/* Maintain consistent title height */
 .project-title {
   font-size: 1.5rem;
   font-weight: bold;
-  min-height: 3rem; /* Adjust based on your design */
+  min-height: 3rem; 
   margin-bottom: 0.75rem;
 }
-
-/* Ensure description alignment across cards */
 .project-description {
   flex-grow: 1;
-  min-height: 6rem; /* Adjust based on expected content */
+  min-height: 6rem;
   margin-top: -1rem;
   margin-bottom: -0.5rem;
 }
-
-/* Tags */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-
 .tag {
   padding: 0.5rem;
   border-radius: 0.3rem;
   font-size: 0.8rem;
   color: white;
 }
-
-/* Color-coded Tags */
 .color-html       { background-color: #E34F26; }
 .color-css        { background-color: #2965F1; }
 .color-javascript { background-color: #F7DF1E; }
@@ -178,39 +150,35 @@
 .color-qt         { background-color: #32C4CC; }
 .color-qt-runner  { background-color: #2D79C7; }
 
-/* Project Links */
 .project-links {
   display: flex;
   justify-content: center;
   padding-top: 0.1rem;
   gap: 0.5rem;
 }
-
 .project-links .icon {
   width: 3rem;
   height: 3rem;
   filter: grayscale(100%);
   transition: filter 0.3s ease, transform 0.2s ease;
 }
-
 .project-links .icon:hover {
   transform: scale(1.2);
   filter: grayscale(0%);
 }
-
 .no-github .github-icon {
-  cursor: not-allowed; /* Change cursor to not-allowed */
-  filter: grayscale(100%); /* Keep the icon gray */
-  pointer-events: none; /* Disable interaction */
-  transform: none; /* No scaling effect */
-  transition: none; /* No hover transition */
+  cursor: not-allowed;
+  filter: grayscale(100%);
+  pointer-events: none; 
+  transform: none; 
+  transition: none;
 }
 .no-youtube .youtube-icon {
-  cursor: not-allowed; /* Change cursor to not-allowed */
-  filter: grayscale(100%); /* Keep the icon gray */
-  pointer-events: none; /* Disable interaction */
-  transform: none; /* No scaling effect */
-  transition: none; /* No hover transition */
+  cursor: not-allowed; 
+  filter: grayscale(100%); 
+  pointer-events: none;
+  transform: none; 
+  transition: none; 
 }
 .disabled-icon .icon:hover {
   transform: scale(1);
@@ -218,43 +186,34 @@
   filter: grayscale(100%);
 }
 
-/* Responsive Layout */
-/* For screens between 720px and 1280px */
 @media (max-width: 1280px) and (min-width: 720px) {
   .projects-container {
-    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    grid-template-columns: repeat(2, 1fr); 
     padding: 1rem;
   }
-
   .project-card {
-    transform: scale(0.9); /* Shrink cards slightly to fit */
-    height: auto; /* Ensure proper content fit */
+    transform: scale(0.9); 
+    height: auto; 
   }
-
   .project-image {
-    height: 180px; /* Adjust image height */
+    height: 180px; 
   }
 }
 
-/* For screens 720px and below */
 @media (max-width: 720px) {
-
   .projects-container {
-    grid-template-columns: 1fr; /* One card per row */
+    grid-template-columns: 1fr; 
     padding: 2rem 1rem;
   }
-
   .project-image {
     height: 160px;
   }
 }
 
-/* For very small screens: 480px and below */
 @media (max-width: 480px) {
   .projects-container {
     grid-template-columns: 1fr;
   }
-
   .project-image {
     height: 150px;
   }

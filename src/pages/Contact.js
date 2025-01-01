@@ -3,7 +3,7 @@ import Lottie from 'lottie-react';
 import ani from '../animations/animation2.json';
 import icon1 from '../assets/contact.png';
 import icon2 from '../assets/contact2.png';
-import document from '../documents/Sourav Minhas Fall24 Resume.pdf';
+import document from '../documents/Sourav Minhas Resume.pdf';
 import './contact.css';
 
 const Contact = React.forwardRef((props, ref) => {
@@ -20,7 +20,7 @@ const Contact = React.forwardRef((props, ref) => {
         <div className="contact-info">
           <h2>Email: <a href="mailto:souravsminhas@gmail.com">souravsminhas@gmail.com</a></h2>
           <h2>Phone: <a href="tel:416-451-9682">416-451-9682</a></h2>
-          <a href={document} download="Sourav_Minhas_Fall24_Resume.pdf">
+          <a href={document} download="Sourav Minhas Resume.pdf">
             <h2>Download My Resume</h2>
           </a>
 

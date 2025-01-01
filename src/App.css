@@ -1,9 +1,8 @@
 
 :root {
-  --navbar-height: 4rem; /* Navbar height */
+  --navbar-height: 4rem; 
 }
 
-/* Global Reset */
 html, body {
   margin: 0;
   padding: 0;
@@ -11,50 +10,46 @@ html, body {
   width: 100%;
   box-sizing: border-box;
   overflow-y: auto;
-  overflow-x: auto; /* Prevent horizontal scroll */
+  overflow-x: auto; 
   z-index: 99;
 }
 
-/* App container */
 .container {
   display: grid;
-  grid-template-rows: var(--navbar-height) 1fr; /* Navbar + Main content */
+  grid-template-rows: var(--navbar-height) 1fr; 
   grid-template-areas: 
     "nav"
     "main";
-  height: 100vh; /* Full viewport height */
+  height: 100vh; 
   width: 100vw;
   overflow-y: auto;
   z-index: 99;
 }
 
-/* Navbar */
 .navbar {
   grid-area: nav;
   position: sticky;
   top: 0;
   left: 0;
   height: var(--navbar-height); 
-  background-color: rgba(150, 0, 0, 0.08); /* Adjust opacity for visibility */
+  background-color: rgba(150, 0, 0, 0.08);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem; /* Adjusted padding for smaller screens */
-  width: 100%; /* Ensure it spans the full width */
-  z-index: 100; /* Ensure the navbar stays on top */
+  padding: 0 2rem; 
+  width: 100%;
+  z-index: 100; 
 }
 
-/* Main Content Area */
 main {
   grid-area: main;
   padding: 1rem;
   box-sizing: border-box;
-  overflow: auto; /* Enable scrolling within the main area */
+  overflow: auto; 
   z-index: 99;
 }
 
-/* Dark and Light Mode Styles */
 .container-light {
   background: #f9f9fb;
   color: #000;
@@ -67,7 +62,6 @@ main {
   transition: background-color 0.6s ease, color 0.6s ease;
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -82,14 +76,19 @@ main {
   background: #555;
 }
 
-/* Media Query for Small Screens (Mobile Devices) */
 @media (max-width: 550px) {
   .navbar {
     height: 5rem;
-    padding: 0 1rem; /* Reduce padding for smaller screens */
+    padding: 0 1rem; 
   }
-
   .test-container {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }

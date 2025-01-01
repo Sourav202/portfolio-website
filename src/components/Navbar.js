@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
 import Lottie from 'lottie-react';
 import ani from '../animations/animationMode.json';
-import './navbar.css'; // Desktop styles
-import './navbarMobile.css'; // Mobile styles
+import './navbar.css'; 
+import './navbarMobile.css'; 
 
 const Navbar = ({ theme, setTheme, currentSection, setCurrentSection }) => {
   const lottieRef = useRef();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Track menu open state
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
   useEffect(() => {
     const handleResize = () => {
@@ -16,7 +16,7 @@ const Navbar = ({ theme, setTheme, currentSection, setCurrentSection }) => {
       setIsMobile(mobileView);
 
       if (!mobileView) {
-        setIsMenuOpen(false); // Close the menu on non-mobile view
+        setIsMenuOpen(false); 
       }
     };
 
@@ -25,13 +25,13 @@ const Navbar = ({ theme, setTheme, currentSection, setCurrentSection }) => {
   }, []);
 
   useEffect(() => {
-    setCurrentSection('home'); // Default to 'home' on load
+    setCurrentSection('home'); 
   }, [setCurrentSection]);
 
   useEffect(() => {
     if (lottieRef.current) {
       const segments = theme === 'light' ? [20, 0] : [0, 20];
-      lottieRef.current.playSegments(segments, true); // Smooth playback between segments
+      lottieRef.current.playSegments(segments, true); 
     }
   }, [theme]);
 
@@ -50,7 +50,7 @@ const Navbar = ({ theme, setTheme, currentSection, setCurrentSection }) => {
 
   const handleButtonClick = (section) => {
     setCurrentSection(section);
-    setIsMenuOpen(false); // Close the menu after navigation
+    setIsMenuOpen(false); 
   };
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -74,71 +74,71 @@ const Navbar = ({ theme, setTheme, currentSection, setCurrentSection }) => {
   };
 
   return (
-    <div id="navbar" className={`navbar container-${theme} ${isMobile ? 'mobile' : ''}`}>
-      <span onClick={handleTextClick} style={{ cursor: 'pointer' }}>
-        Sourav Minhas
-      </span>
+    <div className="white-rectangle">
+      <div id="navbar" className={`navbar container-${theme} ${isMobile ? 'mobile' : ''}`}>
+        <span onClick={handleTextClick} style={{ cursor: 'pointer' }}>
+          Sourav Minhas
+        </span>
+        {isMobile ? (
+          <>
+            <button
+              className={`hamburger ${isMenuOpen ? 'is-active' : ''}`}
+              onClick={toggleMenu}
+            >
+              <span className="bar"></span>
+            </button>
 
-      {isMobile ? (
-        <>
-          <button
-            className={`hamburger ${isMenuOpen ? 'is-active' : ''}`}
-            onClick={toggleMenu}
-          >
-            <span className="bar"></span>
-          </button>
-
-          <nav className={`mobile-nav ${isMenuOpen ? 'is-active' : ''}`}>
-            <button onClick={() => handleButtonClick('home')}>Home</button>
-            <button onClick={() => handleButtonClick('projects')}>Projects</button>
-            <button onClick={() => handleButtonClick('experience')}>Experience</button>
-            <button onClick={() => handleButtonClick('about')}>About</button>
-            <button onClick={() => handleButtonClick('contact')}>Contact</button>
-          </nav>
-        </>
-      ) : (
-        <ul className="desktop-nav">
-          <li
-            onClick={() => handleButtonClick('home')}
-            className={currentSection === 'home' ? 'active' : ''}
-          >
-            Home
-          </li>
-          <li
-            onClick={() => handleButtonClick('projects')}
-            className={currentSection === 'projects' ? 'active' : ''}
-          >
-            Projects
-          </li>
-          <li
-            onClick={() => handleButtonClick('experience')}
-            className={currentSection === 'experience' ? 'active' : ''}
-          >
-            Experience
-          </li>
-          <li
-            onClick={() => handleButtonClick('about')}
-            className={currentSection === 'about' ? 'active' : ''}
-          >
-            About
-          </li>
-          <li
-            onClick={() => handleButtonClick('contact')}
-            className={currentSection === 'contact' ? 'active' : ''}
-          >
-            Contact
-          </li>
-        </ul>
-      )}
-
-      <div className="toggle-icon" onClick={toggle_mode} style={{ cursor: 'pointer' }}>
-        <Lottie
-          lottieRef={lottieRef}
-          animationData={ani}
-          loop={false}
-          autoplay={false}
-          style={{ height: '100%', width: '100%' }}
-        />
+            <nav className={`mobile-nav ${isMenuOpen ? 'is-active' : ''}`}>
+              <button onClick={() => handleButtonClick('home')}>Home</button>
+              <button onClick={() => handleButtonClick('projects')}>Projects</button>
+              <button onClick={() => handleButtonClick('experience')}>Experience</button>
+              <button onClick={() => handleButtonClick('about')}>About</button>
+              <button onClick={() => handleButtonClick('contact')}>Contact</button>
+            </nav>
+          </>
+        ) : (
+          <ul className="desktop-nav">
+            <li
+              onClick={() => handleButtonClick('home')}
+              className={currentSection === 'home' ? 'active' : ''}
+            >
+              Home
+            </li>
+            <li
+              onClick={() => handleButtonClick('projects')}
+              className={currentSection === 'projects' ? 'active' : ''}
+            >
+              Projects
+            </li>
+            <li
+              onClick={() => handleButtonClick('experience')}
+              className={currentSection === 'experience' ? 'active' : ''}
+            >
+              Experience
+            </li>
+            <li
+              onClick={() => handleButtonClick('about')}
+              className={currentSection === 'about' ? 'active' : ''}
+            >
+              About
+            </li>
+            <li
+              onClick={() => handleButtonClick('contact')}
+              className={currentSection === 'contact' ? 'active' : ''}
+            >
+              Contact
+            </li>
+          </ul>
+        )}
+        <div className="toggle-icon" onClick={toggle_mode} style={{ cursor: 'pointer' }}>
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={ani}
+            loop={false}
+            autoplay={false}
+            style={{ height: '100%', width: '100%' }}
+          />
+        </div>
       </div>
     </div>
   );

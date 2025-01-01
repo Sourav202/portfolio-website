@@ -1,4 +1,3 @@
-// App.js
 import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
 import Preloader from './components/PreLoader';
@@ -7,13 +6,13 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Experience from './pages/Experience'; // Replacing Test with Experience
+import Experience from './pages/Experience'; 
 
 function App() {
-  const savedTheme = localStorage.getItem('theme') ?? 'dark';
+  const savedTheme = localStorage.getItem('theme') ?? 'light';
   const [theme, setTheme] = useState(savedTheme);
   const [currentSection, setCurrentSection] = useState('home');
-  const sectionRefs = useRef({}); // Track section refs
+  const sectionRefs = useRef({}); 
 
   useEffect(() => {
     const bodyElement = document.body;
@@ -24,18 +23,6 @@ function App() {
         behavior: 'smooth',
       });
     }
-  }, [currentSection]);
-
-  useEffect(() => {
-    const sectionTitles = {
-      home: 'Sourav Minhas - Home',
-      projects: 'Sourav Minhas - Projects',
-      experience: 'Sourav Minhas - Experience',
-      about: 'Sourav Minhas - About',
-      contact: 'Sourav Minhas - Contact',
-    };
-
-    document.title = sectionTitles[currentSection] || 'Sourav Minhas';
   }, [currentSection]);
 
   useEffect(() => {
@@ -67,7 +54,7 @@ function App() {
           return (
             <Projects
               setCurrentSection={setCurrentSection}
-              theme={theme} // Pass theme to Projects
+              theme={theme} 
               ref={(el) => (sectionRefs.current.projects = el)}
             />
         );
@@ -102,7 +89,6 @@ function App() {
         );
     }
   };
-
   return (
     <div className={`container ${theme === 'light' ? 'container-light' : 'container-dark'}`}>
       <Preloader />
