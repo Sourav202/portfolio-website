@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Experience from './pages/Experience'; 
+import { allImages } from './components/preloadImages';
 
 function App() {
   const savedTheme = localStorage.getItem('theme') ?? 'light';
@@ -40,6 +41,14 @@ function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  // ✅ Preload images
+  useEffect(() => {
+    allImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   const renderSection = () => {
     switch (currentSection) {
       case 'home':
@@ -50,13 +59,13 @@ function App() {
             ref={(el) => (sectionRefs.current.home = el)} 
           />
         );
-        case 'projects':
-          return (
-            <Projects
-              setCurrentSection={setCurrentSection}
-              theme={theme} 
-              ref={(el) => (sectionRefs.current.projects = el)}
-            />
+      case 'projects':
+        return (
+          <Projects
+            setCurrentSection={setCurrentSection}
+            theme={theme} 
+            ref={(el) => (sectionRefs.current.projects = el)}
+          />
         );
       case 'experience':
         return (
@@ -74,10 +83,10 @@ function App() {
         );
       case 'contact':
         return (
-            <Contact 
-              setCurrentSection={setCurrentSection} 
-              ref={(el) => (sectionRefs.current.contact = el)} 
-            />
+          <Contact 
+            setCurrentSection={setCurrentSection} 
+            ref={(el) => (sectionRefs.current.contact = el)} 
+          />
         );
       default:
         return (
@@ -89,6 +98,7 @@ function App() {
         );
     }
   };
+
   return (
     <div className={`container ${theme === 'light' ? 'container-light' : 'container-dark'}`}>
       <Preloader />
@@ -98,7 +108,16 @@ function App() {
         currentSection={currentSection}
         setCurrentSection={setCurrentSection}
       />
-        <div className="App">{renderSection()}</div>
+      <div className="App">
+        {renderSection()}
+
+        {/* ✅ Hidden preloader to force full image load */}
+        <div style={{ display: 'none' }}>
+          {allImages.map((src, index) => (
+            <img key={index} src={src} alt={`preload-${index}`} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

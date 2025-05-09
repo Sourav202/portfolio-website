@@ -111,7 +111,7 @@ const Home = forwardRef(({ setCurrentSection, theme }, ref) => {
         </div>
 
         <p className="home-description">
-          I am currently a 3<sup>rd</sup> year Honours Computer Science student, passionate about learning and exploring new things. This portfolio showcases my journey so far—take a look around using the navigation bar or the buttons below. Feel free to reach out for any additional information!
+          I am currently a 4<sup>th</sup> year Honours Computer Science student, passionate about learning and exploring new things. This portfolio showcases my journey so far—take a look around using the navigation bar or the buttons below. Feel free to reach out for any additional information!
         </p>
         <div className="home-buttons">
           <button className="home-button" onClick={() => setCurrentSection('projects')}>
