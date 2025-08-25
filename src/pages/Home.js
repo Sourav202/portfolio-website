@@ -3,7 +3,7 @@ import './home.css';
 import pic from '../assets/profile.jpg'; 
 
 const phrases = [
-  'AI/ML Engineer.',
+  'ML Engineer.',
   'Software Developer.',
   'Game Developer.',
   'Web Developer.',
@@ -103,7 +103,7 @@ const Home = forwardRef(({ setCurrentSection, theme }, ref) => {
           <span>Sourav</span> <span>Minhas</span>
         </h1>
         <div className="typing-wrapper">
-          <span className="static-text">an aspiring <br></br></span>
+          <span className="static-text">I am a <br></br></span>
           <span className="dynamic-text">
             <i>{text}</i>
             <span className="cursor" />

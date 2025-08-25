@@ -19,9 +19,8 @@ const Contact = React.forwardRef((props, ref) => {
         {/* Contact Information */}
         <div className="contact-info">
           <h2>Email: <a href="mailto:souravsminhas@gmail.com">souravsminhas@gmail.com</a></h2>
-          <h2>Phone: <a href="tel:416-451-9682">416-451-9682</a></h2>
           <a href={document} download="Sourav Minhas Resume.pdf">
-            <h2>Download My Resume</h2>
+            <h2>Download My Resume Here</h2>
           </a>
 
           {/* Social Links */}

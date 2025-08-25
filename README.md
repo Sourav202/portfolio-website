@@ -85,3 +85,5 @@ https://capian.co/blog/learn-music-lockdown
 https://codeburst.io/why-is-reactjs-so-popular-c4ae7c385239
 https://pathways2excellence.ca/
 https://educationontario.com/institutions/carleton-university/
+https://www.nokia.com/about-us/newsroom/media-resources/media-library/nokia-logo/
+https://www.linkedin.com/company/pepperdata/

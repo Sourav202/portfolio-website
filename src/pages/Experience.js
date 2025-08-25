@@ -1,9 +1,27 @@
 import React, { useEffect, forwardRef } from 'react';
-import './experience.css'; // Custom styles for Experience page
+import './experience.css'; 
 import logoPathways from '../assets/logo-pathways.png';
 import logoSM from '../assets/logo-sm.png';
+import logoPepperdata from '../assets/logo-pepperdata.jpg';
+import logoNokia from  '../assets/logo-nokia.png';
 
 const experienceData = [
+  {
+    role: "Software Support Co-op",
+    company: "Nokia, Kanata, Ontario",
+    duration: "Sept 2025 – Present",
+    description:
+      "Contributed to the development and support of networking software, gaining hands-on experience with large-scale systems. Strengthened skills in troubleshooting, problem-solving, and collaborating within a professional engineering environment.",
+    logo: logoNokia, 
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "Pepperdata, Toronto, Ontario",
+    duration: "June 2025 - Aug 2025",
+    description:
+      "Built and optimized large-scale PyTorch workloads on AWS and GCP with Kubernetes and Docker, developing a GPU benchmarking tool and ML pipelines using Jenkins and Vertex AI for fine-tuning and batch inference.",
+    logo: logoPepperdata, 
+  },
   {
     role: "IT Support Technician",
     company: "S.M I.T Services, Brampton, Ontario",
@@ -25,13 +43,15 @@ const experienceData = [
         </a>
         , Brampton, Ontario
       </>
-      ),
-    duration: "Aug 2020 - Present",
+    ),
+    duration: "Aug 2020 - Aug 2023",
     description:
-      "Taught diverse groups of students ranging from all backrounds and ages, balancing time and schedules effectively while creating educational resources in English, Math and French. This role provided essential skills in time management and client communication, serving as my gateway into the professional world.",
+      "Taught diverse groups of students ranging from all backgrounds and ages, balancing time and schedules effectively while creating educational resources in English, Math and French. This role provided essential skills in time management and client communication, serving as my gateway into the professional world.",
     logo: logoPathways,
   },
 ];
+
+
 
 const Experience = forwardRef(({ setCurrentSection }, ref) => {
   useEffect(() => {

@@ -13,8 +13,6 @@ import projElevator from '../assets/proj-elevator.png';
 import ytIcon from '../assets/yt-icon.png';
 import githubIcon from '../assets/github-icon.png';
 
-const disabledVids = ["Robot Dice Race", "Ghost Hunt Simulator", "Digital Image Classifier", "Ghost Hunt Simulator", "Library Management System", "My Portfolio Website", "Public & Private Chat Client"]; // Add titles here
-const disabledGits = ["Robot Dice Race"];
 const projectsData = [
   {
     title: "Digital Image Classifier",
@@ -23,7 +21,7 @@ const projectsData = [
     languages: ["Python"],
     tools: ["TensorFlow", "NumPy", "Pandas"],
     image: projClass, 
-    youtubeLink: "https://www.youtube.com", 
+    youtubeLink: null, 
     githubLink: "https://github.com/Sourav202/Digital-Image-Classifier", 
     os: "windows", 
   },
@@ -56,7 +54,7 @@ const projectsData = [
     languages: ["C"],
     tools: ["Makefile"],
     image: projGhost,
-    youtubeLink: "https://www.youtube.com",
+    youtubeLink: null,
     githubLink: "https://github.com/Sourav202/Ghost-Hunt-Simulator",
     os: "linux", 
   },
@@ -67,7 +65,7 @@ const projectsData = [
     languages: ["HTML", "CSS", "JavaScript", "SQL"],
     tools: ["Node.js"],
     image: projLibrary,
-    youtubeLink: "https://www.youtube.com",
+    youtubeLink: null,
     githubLink: "https://github.com/Sourav202/Library-Management-System",
     os: "windows", 
   },
@@ -77,7 +75,7 @@ const projectsData = [
     languages: ["HTML", "CSS", "JavaScript"],
     tools: ["React"],
     image: projPortfolio,
-    youtubeLink: "https://www.youtube.com",
+    youtubeLink: null,
     githubLink: "https://github.com/Sourav202/portfolio-website",
     os: "windows", 
   },
@@ -88,7 +86,7 @@ const projectsData = [
     languages: ["HTML", "CSS", "JavaScript"],
     tools: ["Node.js", "Socket.IO"],
     image: projChat,
-    youtubeLink: "https://www.youtube.com",
+    youtubeLink: null,
     githubLink: "https://github.com/Sourav202/Public-and-Private-Chat-Client",
     os: "windows", 
   },
@@ -99,8 +97,8 @@ const projectsData = [
     languages: ["Python"],
     tools: ["Pygame"],
     image: projRobot,
-    youtubeLink: "https://www.youtube.com",
-    className: "no-github",
+    youtubeLink: null,
+    githubLink: null,
     os: "windows", 
   },
   {
@@ -135,14 +133,13 @@ const Projects = forwardRef(({ setCurrentSection, theme }, ref) => {
   return (
     <div>
       <div className="projects-header" ref={ref}>
-      <p className="project-description"/>
+        <p className="project-description"/>
         <h2 className="projects-heading">Explore My Projects</h2>
       </div>
       <div
         className={`projects-container ${
           theme === 'light' ? 'light-theme' : 'dark-theme'
         }`}
-        
       >
         {projectsData.map((project, index) => (
           <div className="project-card" key={index}>
@@ -181,29 +178,23 @@ const Projects = forwardRef(({ setCurrentSection, theme }, ref) => {
                   ))}
                 </div>
               </div>
-                <div className="project-links">
-                {disabledVids.includes(project.title) ? (
-                  <div className="youtube-icon disabled-icon">
-                    <img src={ytIcon} alt="YouTube" className="icon" />
-                  </div>
-                ) : (
+              <div className="project-links">
+                {project.youtubeLink && (
                   <a
                     href={project.youtubeLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${project.title} on YouTube`}
                   >
                     <img src={ytIcon} alt="YouTube" className="icon" />
                   </a>
                 )}
-                {disabledGits.includes(project.title)  ? (
-                  <div className="github-icon disabled-icon">
-                    <img src={githubIcon} alt="GitHub" className="icon" />
-                  </div>
-                ) : (
+                {project.githubLink && (
                   <a
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${project.title} on GitHub`}
                   >
                     <img src={githubIcon} alt="GitHub" className="icon" />
                   </a>
