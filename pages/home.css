@@ -1,0 +1,210 @@
+:root {
+  --navbar-height: 4rem;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+  font-weight: bold; 
+  z-index: 1;
+}
+
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: calc(100vh - var(--navbar-height));
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow-x: hidden; 
+  z-index: 1;
+}
+.home-image {
+  width: clamp(200px, 60%, 500px); 
+  height: clamp(200px, 60%, 500px); 
+  border-radius: 50%; 
+  object-fit: cover; 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+  box-sizing: border-box; 
+  z-index: 1;
+}
+.home-image:hover {
+  border: 0.2rem solid #f5427d; 
+  transform: scale(1.05); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+.home-text {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  text-align: left;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  overflow-wrap: break-word; 
+  z-index: 1;
+}
+.home-heading {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: default;
+  font-weight: bold;
+  z-index: 1;
+}
+.home-heading:hover span:nth-child(1) {
+  transition: 0.3s;
+  margin-right: 0.1rem;
+}
+.home-heading:hover span:nth-child(1)::after {
+  transition: 0.3s;
+  content: "";
+}
+.home-heading:hover span:nth-child(2) {
+  transition: 0.3s;
+  margin-left: 0.1rem;
+}
+.home-heading:hover span {
+  text-shadow: 
+    0 0 10px #f5427d, 
+    0 0 20px #f5427d, 
+    0 0 30px #f5427d, 
+    0 0 40px #f5427d, 
+    0 0 80px #f5427d, 
+    0 0 160px #f5427d;
+}
+.home-description {
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.typing-wrapper {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  overflow-wrap: break-word;
+}
+.static-text {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.dynamic-text {
+  display: inline-block;
+  white-space: normal; 
+  font-weight: bold;
+}
+.cursor {
+  border-left: 4px solid #f5427d;
+  animation: blink 0.7s steps(2, start) infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.home-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); 
+  gap: 1rem;
+  margin-top: 2rem; 
+  width: 100%; 
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr); 
+}
+.home-button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #f5427d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+  width: 100%; 
+}
+.home-button:hover {
+  transform: scale(1.05);
+  background-color: #c43666;
+}
+
+@media (max-width: 1000px) {
+  .home-image {
+    width: clamp(200px, 60%, 400px); 
+    height: clamp(200px, 60%, 400px); 
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+    box-sizing: border-box; 
+    z-index: 1;
+  }
+  .home-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); 
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    justify-items: center; 
+    grid-template-columns: repeat(1, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    align-items: center; 
+    padding: 1rem; 
+    gap: 1rem; 
+    max-width: 100%; 
+    overflow-x: hidden; 
+  }
+  .home-image {
+    margin-top: 5rem; 
+    max-width: 100%;
+    height: auto;
+    width: clamp(200px, 60%, 350px); 
+    height: clamp(200px, 60%, 350px); 
+  }
+  .home-text {
+    max-width: 100%; 
+    text-align: center; 
+  }
+  .typing-wrapper {
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+  .home-buttons {
+    flex-direction: column; 
+    width: 100%; 
+    gap: 0.5rem;
+  }
+  .home-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+.blob-home {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.blob-home path {
+  transition: fill 1s ease-in-out; 
+}
