@@ -4,20 +4,29 @@ import logoPathways from '../assets/logo-pathways.png';
 import logoSM from '../assets/logo-sm.png';
 import logoPepperdata from '../assets/logo-pepperdata.jpg';
 import logoNokia from  '../assets/logo-nokia.png';
+import logoNokia2 from  '../assets/logo-nokia2.png';
 
 const experienceData = [
+    {
+    role: "Automation Engineer Co-op",
+    company: "Nokia, Kanata, Ontario",
+    duration: "Jan 2026 – Present",
+    description:
+      "Supporting cloud-native automation and deployment workflows while gaining hands-on experience with notable technologies including Java, Go, Kubernetes (OpenShift), Helm, and Ansible.",
+    logo: logoNokia2, 
+  },
   {
     role: "Software Support Co-op",
     company: "Nokia, Kanata, Ontario",
-    duration: "Sept 2025 – Present",
+    duration: "Sep 2025 – Dec 2025",
     description:
-      "Contributed to the development and support of networking software, gaining hands-on experience with large-scale systems. Strengthened skills in troubleshooting, problem-solving, and collaborating within a professional engineering environment.",
+      "Contributed to the development and support of networking software, including large-scale systems. Strengthened skills in troubleshooting, problem-solving, and collaborating within a professional engineering environment.",
     logo: logoNokia, 
   },
   {
     role: "Software Engineer Intern",
     company: "Pepperdata, Toronto, Ontario",
-    duration: "June 2025 - Aug 2025",
+    duration: "Jun 2025 - Aug 2025",
     description:
       "Built and optimized large-scale PyTorch workloads on AWS and GCP with Kubernetes and Docker, developing a GPU benchmarking tool and ML pipelines using Jenkins and Vertex AI for fine-tuning and batch inference.",
     logo: logoPepperdata, 
