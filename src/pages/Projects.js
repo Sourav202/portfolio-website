@@ -10,10 +10,22 @@ import projPortfolio from '../assets/proj-portfolio.png';
 import projGeo from '../assets/proj-geo.png';
 import projClass from '../assets/proj-class.png';
 import projElevator from '../assets/proj-elevator.png';
+import projPiVision from '../assets/proj-vision.webp';
 import ytIcon from '../assets/yt-icon.png';
 import githubIcon from '../assets/github-icon.png';
 
 const projectsData = [
+  {
+  title: "PiVision",
+  description:
+    "QNX-powered vision system where a Raspberry Pi 5 records video and sends it to a Windows server. The server uses OpenCV and MediaPipe to process the footage and detect useful visual information. This setup separates video capture from processing, making the system easier to scale, test, and extend. ",
+  languages: ["Python", "Shell"],
+  tools: ["OpenCV", "MediaPipe", "Raspberry Pi"],
+  image: projPiVision,
+  youtubeLink: null,
+  githubLink: "https://github.com/Sourav202/PiVision",
+  os: "qnx",
+  },
   {
     title: "Digital Image Classifier",
     description:
@@ -123,11 +135,29 @@ const Projects = forwardRef(({ setCurrentSection, theme }, ref) => {
     `tag color-${name.toLowerCase().replace('.', '-').replace(' ', '-')}`;
 
   const getOSIcon = (os) => {
-    return os === 'linux' ? 'linux-logo.png' : 'windows-logo.png';
+    switch (os) {
+      case 'linux':
+        return 'linux-logo.png';
+      case 'windows':
+        return 'windows-logo.png';
+      case 'qnx':
+        return 'qnx-logo.png';
+      default:
+        return 'linux-logo.png';
+    }
   };
 
   const getOSTooltip = (os) => {
-    return os === 'linux' ? 'Developed in Linux OS' : 'Developed in Windows OS';
+    switch (os) {
+      case 'linux':
+        return 'Developed on Linux';
+      case 'windows':
+        return 'Developed on Windows';
+      case 'qnx':
+        return 'Developed on QNX';
+      default:
+        return 'Operating System';
+    }
   };
 
   return (

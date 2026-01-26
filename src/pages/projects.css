@@ -149,6 +149,10 @@
 .color-pandas     { background-color: #150458; }
 .color-qt         { background-color: #32C4CC; }
 .color-qt-runner  { background-color: #2D79C7; }
+.color-raspberry-pi { background-color: #c51a4a; } 
+.color-opencv { background-color: #5c3ee8; }
+.color-mediapipe { background-color: #0f9d58; }
+
 
 .project-links {
   display: flex;
