@@ -5,22 +5,31 @@ import logoSM from '../assets/logo-sm.png';
 import logoPepperdata from '../assets/logo-pepperdata.jpg';
 import logoNokia from  '../assets/logo-nokia.png';
 import logoNokia2 from  '../assets/logo-nokia2.png';
+import logoRBC from  '../assets/logo-rbc.png';
 
 const experienceData = [
-    {
-    role: "Automation Engineer Co-op",
-    company: "Nokia, Kanata, Ontario",
-    duration: "Jan 2026 – Present",
+  {
+    role: "Quality Engineer Intern",
+    company: "RBC, Toronto, Ontario",
+    duration: "May 2026 – Present",
     description:
-      "Supporting cloud-native automation and deployment workflows while gaining hands-on experience with notable technologies including Java, Go, Kubernetes (OpenShift), Helm, and Ansible.",
+      "Working on the Merchant Services Workbench platform, developing automated regression tests and supporting validation workflows using Playwright and TypeScript for POS reporting services",
+    logo: logoRBC, 
+  },
+  {
+    role: "Automation Engineer Co-op",
+    company: "Nokia, Ottawa, Ontario",
+    duration: "Jan 2026 – Apr 2026",
+    description:
+      "Built end-to-end product features for the NEDR platform in Java and Go within the Mobile Infrastructure team. Wrote unit tests, debugged issues, contributed code to production releases, and authored internal and customer documentation",
     logo: logoNokia2, 
   },
   {
     role: "Software Support Co-op",
-    company: "Nokia, Kanata, Ontario",
+    company: "Nokia, Ottawa, Ontario",
     duration: "Sep 2025 – Dec 2025",
     description:
-      "Contributed to the development and support of networking software, including large-scale systems. Strengthened skills in troubleshooting, problem-solving, and collaborating within a professional engineering environment.",
+      "Worked on the NSP product within the Network Infrastructure team, investigating and resolving software defects. Used Python along with Kubernetes, OpenStack, Linux, and Postman to reproduce issues, analyze logs, and trace API behaviour",
     logo: logoNokia, 
   },
   {
@@ -28,7 +37,7 @@ const experienceData = [
     company: "Pepperdata, Toronto, Ontario",
     duration: "Jun 2025 - Aug 2025",
     description:
-      "Built and optimized large-scale PyTorch workloads on AWS and GCP with Kubernetes and Docker, developing a GPU benchmarking tool and ML pipelines using Jenkins and Vertex AI for fine-tuning and batch inference.",
+      "Engineered PyTorch training and inference workloads on AWS and GCP using Docker and Kubernetes. Worked with Jenkins and Vertex AI pipelines and created a GPU benchmarking tool to evaluate performance",
     logo: logoPepperdata, 
   },
   {
@@ -36,7 +45,7 @@ const experienceData = [
     company: "S.M I.T Services, Brampton, Ontario",
     duration: "May 2024 - Aug 2024",
     description:
-      "Acquired a basic understanding of hardware systems and their integration with software, while troubleshooting and resolving of technical issues. This role strengthened my expertise in hardware and software related interactions, fostering enhanced problem-solving capabilities, adaptability, and critical thinking skills.",
+      "Provided IT support for PCs and laptops. Diagnosed technical problems, performed troubleshooting, software setup, and maintenance to help clients resolve issues",
     logo: logoSM,
   },
   {
@@ -55,7 +64,7 @@ const experienceData = [
     ),
     duration: "Aug 2020 - Aug 2023",
     description:
-      "Taught diverse groups of students ranging from all backgrounds and ages, balancing time and schedules effectively while creating educational resources in English, Math and French. This role provided essential skills in time management and client communication, serving as my gateway into the professional world.",
+      "Supported students in Computer Science, Math, English, and French from PRE-K to 12. Developed worksheets to reinforce learning and improve confidence",
     logo: logoPathways,
   },
 ];
