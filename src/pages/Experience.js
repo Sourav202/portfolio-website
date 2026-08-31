@@ -6,14 +6,24 @@ import logoPepperdata from '../assets/logo-pepperdata.jpg';
 import logoNokia from  '../assets/logo-nokia.png';
 import logoNokia2 from  '../assets/logo-nokia2.png';
 import logoRBC from  '../assets/logo-rbc.png';
+import logoAMD from  '../assets/logo-amd.jpg';
+
 
 const experienceData = [
+    {
+    role: "AI Tooling Intern",
+    company: "AMD, Markham, Ontario",
+    duration: "Sep 2026 – Present",
+    description:
+      "Working across firmware and systems engineering, focusing on hardware-software ML design and integration",
+    logo: logoAMD, 
+  },
   {
     role: "Quality Engineer Intern",
     company: "RBC, Toronto, Ontario",
-    duration: "May 2026 – Present",
+    duration: "May 2026 – Aug 2026",
     description:
-      "Working on the Merchant Services Workbench platform, developing automated regression tests and supporting validation workflows using Playwright and TypeScript for POS reporting services",
+      "Worked on AI-powered engineering and automation tools, using LLMs, MCP integrations, and Playwright's agentic AI to improve internal knowledge access, test generation, regression workflows, and developer productivity",
     logo: logoRBC, 
   },
   {
@@ -35,7 +45,7 @@ const experienceData = [
   {
     role: "Software Engineer Intern",
     company: "Pepperdata, Toronto, Ontario",
-    duration: "Jun 2025 - Aug 2025",
+    duration: "May 2025 - Aug 2025",
     description:
       "Engineered PyTorch training and inference workloads on AWS and GCP using Docker and Kubernetes. Worked with Jenkins and Vertex AI pipelines and created a GPU benchmarking tool to evaluate performance",
     logo: logoPepperdata, 
